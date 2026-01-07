@@ -1,0 +1,456 @@
+/* =====================================================
+   🎯 SISTEMA UNIFICADO RESPONSIVO PARA HEADERS Y BANNER TITLES
+   ATLANTIS WEB PAGE - VERSIÓN RESPONSIVE OPTIMIZADA
+   ===================================================== */
+
+/* ===== VARIABLES CSS GLOBALES ===== */
+:root {
+  /* Breakpoints estándar */
+  --mobile-sm: 360px;
+  --mobile: 480px;
+  --mobile-lg: 576px;
+  --tablet: 768px;
+  --tablet-lg: 992px;
+  --desktop: 1024px;
+  --desktop-lg: 1200px;
+  --desktop-xl: 1400px;
+  
+  /* Heights responsivos para banners */
+  --banner-height-xl: 600px;
+  --banner-height-lg: 500px;
+  --banner-height-md: 400px;
+  --banner-height-sm: 300px;
+  --banner-height-xs: 250px;
+  
+  /* Tipografía responsiva */
+  --banner-font-xl: clamp(2.5rem, 5vw, 4rem);
+  --banner-font-lg: clamp(2rem, 4vw, 3rem);
+  --banner-font-md: clamp(1.5rem, 3.5vw, 2.5rem);
+  --banner-font-sm: clamp(1.2rem, 3vw, 2rem);
+  --banner-font-xs: clamp(1rem, 2.5vw, 1.5rem);
+  
+  /* Espaciados */
+  --banner-padding-xl: clamp(20px, 3vw, 40px);
+  --banner-padding-lg: clamp(15px, 2.5vw, 30px);
+  --banner-padding-md: clamp(10px, 2vw, 20px);
+  --banner-padding-sm: clamp(8px, 1.5vw, 15px);
+}
+
+/* ===== ESTILOS BASE PARA TODOS LOS BANNER HEADERS ===== */
+.banner-informacion,
+.main-header-fon-sale,
+.main-header-fon-tuPlan, 
+.main-header-fon-blog,
+.main-header-fon-nuestras,
+.main-header-font-parking,
+.banner-servicios {
+  /* Layout base */
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Background properties */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* Mejor performance en móviles */
+  
+  /* Heights responsivos usando CSS custom properties */
+  height: var(--banner-height-xl);
+  min-height: 200px; /* Altura mínima de seguridad */
+  
+  /* Overlay para mejorar legibilidad */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+}
+
+/* ===== ESTILOS UNIFICADOS PARA BANNER TITLES ===== */
+.banner-title {
+  /* Posicionamiento */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  
+  /* Layout */
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 0 var(--banner-padding-xl);
+  
+  /* Asegurar que el contenido sea visible */
+  pointer-events: none;
+}
+
+.banner-title h1 {
+  /* Tipografía responsiva */
+  font-size: var(--banner-font-xl);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: clamp(1px, 0.5vw, 4px);
+  line-height: 1.1;
+  
+  /* Color y efectos para legibilidad */
+  color: white;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(0, 0, 0, 0.6);
+  
+  /* Espaciado */
+  margin: 0;
+  padding: var(--banner-padding-lg);
+  
+  /* Backup para navegadores que no soporten text-shadow */
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  
+  /* Transiciones suaves */
+  transition: all 0.3s ease;
+}
+
+/* ===== BACKGROUNDS ESPECÍFICOS PARA CADA BANNER ===== */
+.banner-informacion {
+  background-image: url('../img/HOME/SLIDER/slider_video_recortada.jpg');
+}
+
+.main-header-fon-sale {
+  background-image: url('../img/SALE/img_banner.jpg');
+}
+
+.main-header-fon-tuPlan,
+.main-header-fon-blog {
+  background-image: url('../img/04 PLANES/img_interna_bannerprincipal.jpg');
+}
+
+.main-header-fon-nuestras {
+  background-image: url('../img/MARCAS/img_bannerprincipal.jpg');
+}
+
+.main-header-font-parking {
+  background-image: url('../img/HOME/SLIDER/slider_video_recortada.jpg');
+}
+
+.banner-servicios {
+  background-image: url('../img/SERVICIOS/img_banner_servicios.jpg');
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* 🖥️ DESKTOP EXTRA LARGE (1400px+) */
+@media (min-width: 1400px) {
+  .banner-informacion,
+  .main-header-fon-sale,
+  .main-header-fon-tuPlan, 
+  .main-header-fon-blog,
+  .main-header-fon-nuestras,
+  .main-header-font-parking,
+  .banner-servicios {
+    height: var(--banner-height-xl);
+  }
+  
+  .banner-title h1 {
+    font-size: var(--banner-font-xl);
+    padding: var(--banner-padding-xl);
+  }
+}
+
+/* 🖥️ DESKTOP LARGE (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .banner-informacion,
+  .main-header-fon-sale,
+  .main-header-fon-tuPlan, 
+  .main-header-fon-blog,
+  .main-header-fon-nuestras,
+  .main-header-font-parking,
+  .banner-servicios {
+    height: var(--banner-height-lg);
+  }
+  
+  .banner-title h1 {
+    font-size: var(--banner-font-lg);
+    padding: var(--banner-padding-lg);
+  }
+}
+
+/* 🖥️ DESKTOP (1024px - 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .banner-informacion,
+  .main-header-fon-sale,
+  .main-header-fon-tuPlan, 
+  .main-header-fon-blog,
+  .main-header-fon-nuestras,
+  .main-header-font-parking,
+  .banner-servicios {
+    height: var(--banner-height-lg);
+  }
+  
+  .banner-title {
+    padding: 0 var(--banner-padding-lg);
+  }
+  
+  .banner-title h1 {
+    font-size: var(--banner-font-lg);
+    padding: var(--banner-padding-lg);
+    letter-spacing: clamp(1px, 0.4vw, 3px);
+  }
+}
+
+/* 📱 TABLET LARGE (992px - 1023px) */
+@media (min-width: 992px) and (max-width: 1023px) {
+  .banner-informacion,
+  .main-header-fon-sale,
+  .main-header-fon-tuPlan, 
+  .main-header-fon-blog,
+  .main-header-fon-nuestras,
+  .main-header-font-parking,
+  .banner-servicios {
+    height: var(--banner-height-md);
+  }
+  
+  .banner-title {
+    padding: 0 var(--banner-padding-md);
+  }
+  
+  .banner-title h1 {
+    font-size: var(--banner-font-md);
+    padding: var(--banner-padding-md);
+    letter-spacing: clamp(1px, 0.3vw, 2px);
+  }
+}
+
+/* 📱 TABLET (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .banner-informacion,
+  .main-header-fon-sale,
+  .main-header-fon-tuPlan, 
+  .main-header-fon-blog,
+  .main-header-fon-nuestras,
+  .main-header-font-parking,
+  .banner-servicios {
+    height: var(--banner-height-md);
+  }
+  
+  .banner-title {
+    padding: 0 var(--banner-padding-md);
+  }
+  
+  .banner-title h1 {
+    font-size: var(--banner-font-md);
+    padding: var(--banner-padding-md);
+    letter-spacing: clamp(1px, 0.2vw, 2px);
+  }
+}
+
+/* 📱 MOBILE LARGE (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .banner-informacion,
+  .main-header-fon-sale,
+  .main-header-fon-tuPlan, 
+  .main-header-fon-blog,
+  .main-header-fon-nuestras,
+  .main-header-font-parking,
+  .banner-servicios {
+    height: var(--banner-height-sm);
+  }
+  
+  .banner-title {
+    padding: 0 var(--banner-padding-md);
+  }
+  
+  .banner-title h1 {
+    font-size: var(--banner-font-sm);
+    padding: var(--banner-padding-md);
+    letter-spacing: clamp(1px, 0.2vw, 2px);
+    line-height: 1.2;
+  }
+}
+
+/* 📱 MOBILE (480px - 575px) */
+@media (min-width: 480px) and (max-width: 575px) {
+  .banner-informacion,
+  .main-header-fon-sale,
+  .main-header-fon-tuPlan, 
+  .main-header-fon-blog,
+  .main-header-fon-nuestras,
+  .main-header-font-parking,
+  .banner-servicios {
+    height: var(--banner-height-sm);
+  }
+  
+  .banner-title {
+    padding: 0 var(--banner-padding-sm);
+  }
+  
+  .banner-title h1 {
+    font-size: var(--banner-font-sm);
+    padding: var(--banner-padding-sm);
+    letter-spacing: 1px;
+    line-height: 1.2;
+    
+    /* Mejorar legibilidad en móviles */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* 📱 MOBILE SMALL (360px - 479px) */
+@media (min-width: 360px) and (max-width: 479px) {
+  .banner-informacion,
+  .main-header-fon-sale,
+  .main-header-fon-tuPlan, 
+  .main-header-fon-blog,
+  .main-header-fon-nuestras,
+  .main-header-font-parking,
+  .banner-servicios {
+    height: var(--banner-height-xs);
+  }
+  
+  .banner-title {
+    padding: 0 var(--banner-padding-sm);
+  }
+  
+  .banner-title h1 {
+    font-size: var(--banner-font-xs);
+    padding: var(--banner-padding-sm);
+    letter-spacing: 1px;
+    line-height: 1.3;
+    
+    /* Máxima legibilidad en móviles pequeños */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+  }
+}
+
+/* 📱 MOBILE EXTRA SMALL (hasta 359px) */
+@media (max-width: 359px) {
+  .banner-informacion,
+  .main-header-fon-sale,
+  .main-header-fon-tuPlan, 
+  .main-header-fon-blog,
+  .main-header-fon-nuestras,
+  .main-header-font-parking,
+  .banner-servicios {
+    height: var(--banner-height-xs);
+    min-height: 220px;
+  }
+  
+  .banner-title {
+    padding: 0 15px;
+  }
+  
+  .banner-title h1 {
+    font-size: clamp(0.9rem, 4vw, 1.3rem);
+    padding: 12px 15px;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    
+    /* Máxima legibilidad y ajuste para pantallas muy pequeñas */
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 6px;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
+/* ===== OPTIMIZACIONES PARA ORIENTACIÓN LANDSCAPE EN MÓVILES ===== */
+@media (max-width: 767px) and (orientation: landscape) {
+  .banner-informacion,
+  .main-header-fon-sale,
+  .main-header-fon-tuPlan, 
+  .main-header-fon-blog,
+  .main-header-fon-nuestras,
+  .main-header-font-parking,
+  .banner-servicios {
+    height: 70vh;
+    min-height: 200px;
+  }
+  
+  .banner-title h1 {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    padding: 10px 20px;
+    line-height: 1.2;
+  }
+}
+
+/* ===== MEJORAS DE ACCESIBILIDAD ===== */
+
+/* Respeto por prefer-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .banner-title h1 {
+    transition: none;
+  }
+}
+
+/* Mejora de contraste para usuarios con baja visión */
+@media (prefers-contrast: high) {
+  .banner-title h1 {
+    background: rgba(0, 0, 0, 0.9);
+    text-shadow: 
+      3px 3px 6px rgba(0, 0, 0, 1),
+      0 0 30px rgba(0, 0, 0, 1);
+  }
+}
+
+/* ===== OPTIMIZACIONES DE PERFORMANCE ===== */
+
+/* Optimización para pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .banner-informacion,
+  .main-header-fon-sale,
+  .main-header-fon-tuPlan, 
+  .main-header-fon-blog,
+  .main-header-fon-nuestras,
+  .main-header-font-parking,
+  .banner-servicios {
+    background-attachment: scroll; /* Mejor performance en retina */
+  }
+}
+
+/* ===== CLASES HELPER ADICIONALES ===== */
+
+/* Para banners con contenido adicional */
+.banner-title.with-subtitle h1 {
+  margin-bottom: 15px;
+}
+
+.banner-title .subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+/* Para banners con altura personalizada */
+.banner-height-custom {
+  height: auto !important;
+  min-height: 300px;
+  padding: 60px 0;
+}
+
+/* Clase para debug - solo en desarrollo */
+.banner-debug {
+  border: 3px solid red !important;
+}
+
+.banner-debug .banner-title {
+  border: 2px solid yellow !important;
+}
+
+.banner-debug .banner-title h1 {
+  border: 1px solid green !important;
+}

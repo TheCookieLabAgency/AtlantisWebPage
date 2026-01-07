@@ -1,0 +1,123 @@
+/* ================================
+   Reset mínimo
+================================ */
+.smart-parking-page { color: #333; font-family: inherit; }
+* { box-sizing: border-box; }
+img { max-width: 100%; display: block; }
+
+
+
+
+.smart-parking-hero{
+  padding: clamp(32px, 6vw, 72px) clamp(16px, 6vw, 40px);
+  background: #fff;
+}
+.sp-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 5fr 7fr; /* imagen más grande */
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+}
+
+/* Columna texto */
+.sp-copy{
+  order: 1;
+}
+.sp-eyebrow{
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-weight: 800;
+  font-size: .8rem;
+  color: #660099;
+  background: rgba(102,0,153,.08);
+  border: 1px solid rgba(102,0,153,.18);
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.sp-title{
+  margin: 0 0 10px;
+  font-weight: 900;
+  font-size: clamp(28px, 4.6vw, 54px);
+  line-height: 1.05;
+  letter-spacing: .5px;
+  color: #1a1a1a;
+}
+.sp-subtitle{
+  margin: 0 0 18px;
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.6;
+  color: #555;
+}
+.sp-bullets{
+  margin: 0 0 24px 0;
+  padding: 0;
+  list-style: none;
+}
+.sp-bullets li{
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 10px;
+  font-size: clamp(14px, 1.4vw, 16px);
+  color: #444;
+}
+.sp-bullets li::before{
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 1;
+  color: #660099;
+  font-weight: 900;
+}
+
+
+
+/* Columna imagen (más grande) */
+.sp-figure{
+  order: 2;
+  margin: 0;
+  position: relative;
+}
+.sp-image{
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  background: #faf7fc;
+  padding: clamp(8px, .9vw, 14px);   /* marco respirable */
+  border: 1px solid rgba(102,0,153,.12);
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+  object-fit: contain; /* no recorta el tarifario */
+}
+.sp-figcaption{
+  text-align: center;
+  font-size: .85rem;
+  color: #888;
+  margin-top: 8px;
+}
+
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 1024px){
+  .sp-container{
+    grid-template-columns: 1fr;
+  }
+  /* Imagen primero en móvil para darle protagonismo */
+  .sp-figure{ order: -1; }
+  .sp-image{
+    padding: 10px;
+    border-radius: 12px;
+  }
+  .sp-ctas{ justify-content: center; }
+  .sp-copy{ text-align: center; }
+  .sp-bullets li{ text-align: left; } /* bullets alineados a la izquierda */
+}
+
+@media (max-width: 480px){
+  .sp-ctas{ gap: 10px; }
+  .sp-btn{ width: 100%; }
+}

@@ -1,0 +1,1564 @@
+﻿/* ============ BASE ============  */
+.home {
+  font-family: inherit;
+  color: #333;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color:#660099;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00aced;
+  transform: scale(1.1);
+}
+
+.top-bar-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.top-bar-link {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+.top-bar-link:hover {
+  background-color: white;
+  color: #111;
+}
+
+/* ============ HEADER + VIDEO ============ */
+.main-header-fon {
+  width: 100%;
+  height: 100vh;        /* pantalla completa desktop */
+  min-height: 520px;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-container { position: absolute; inset: 0; }
+
+.background-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* recorta sin deformar */
+  z-index: 0;
+  pointer-events: none;
+  transform: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Imagen para los banners del hero (mismas dimensiones del video) */
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  user-select: none;
+}
+
+.hero-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 1; /* por debajo de flechas (z=5) */
+}
+
+/* (sin uso) se removió la máscara/espaciador en favor de margin-top dinámico */
+
+/* Flechas de navegaciÃ³n del hero */
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #333;
+  z-index: 5;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+.hero-nav.prev { left: 12px; }
+.hero-nav.next { right: 12px; }
+.hero-nav:hover { background: #fff; }
+
+/* ============ NAV ============ */
+.logo { height: 60px; }
+
+.main-nav .nav-list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li { position: relative; }
+
+.nav-list a, .nav-list span {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.has-submenu:hover .submenu { display: block; }
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111;
+  padding: 10px 0;
+  border-radius: 5px;
+  min-width: 150px;
+  z-index: 30;
+}
+
+.submenu li { padding: 8px 20px; }
+
+.submenu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.submenu li a:hover { background-color: #222; }
+
+/* ============ BOTONES PRINCIPALES ============ */
+/* Quitamos el top:100vh que creaba el hueco. Ahora fluyen debajo del header,
+   pero los levantamos un poco con margin-top negativo SOLO en pantallas grandes. */
+.main-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: relative;     /* deja de ser absolute */
+  margin-top: -60px;      /* los pega al video sin crear hueco con el carrusel */
+  z-index: 2;
+  border: none;
+  outline: none;
+}
+
+.image-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: 300px;
+  border: none;
+  outline: none;
+}
+
+.image-button img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.image-button:hover { transform: scale(1.05); }
+
+/* ============ GASTRONOMÃA (ACTUALIZADO) ============ */
+.gastronomy {
+  position: relative;
+  background-image: url('../Material/GastronomiaHome/GASTRONOMIA-BACK.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5%;   /* mantiene aire al texto */
+  padding-right: 5%;
+  overflow: hidden;
+}
+
+/* Capa animada (solo desktop/tablet) */
+.gastronomy-animated {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 78%;         /* ðŸ”¥ aumentamos espacio para que quepa la bebida amarilla */
+  overflow: visible;  /* ðŸ”¥ permite que las imÃ¡genes sobresalgan si lo necesitan */
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.gastronomy-tacos,
+.gastronomy-aguitas,
+.gastronomy-pastica{
+  position: absolute;
+  object-fit: cover;
+  transition:
+    bottom 700ms ease,
+    left 700ms ease,
+    right 700ms ease,
+    transform 700ms ease,
+    opacity 500ms ease;
+  opacity: 0;
+  transform: translateY(24px) scale(.98);
+}
+
+
+.gastronomy-tacos{
+  width: 60%;
+  height: 60%;
+  bottom: -6%;
+  left: -6%;
+  z-index: 2;
+}
+.gastronomy-aguitas {
+  width: 34%;
+  bottom: -4%;
+  left: 55%;   /* ðŸ”¥ forzamos bebida roja mÃ¡s a la derecha */
+  z-index: 2;
+}
+.gastronomy-pastica{
+  width: 64%;
+  height: 60%;
+  bottom: -4%;
+  right: -10%;
+}
+
+
+/* Al ACTIVARSE por scroll */
+.gastronomy-animated.active .gastronomy-tacos {
+  bottom: 4%;
+  left: 25%;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.gastronomy-animated.active .gastronomy-aguitas {
+  bottom: 10%;
+  left: 65%;   /* ðŸ”¥ ya nunca invade el texto */
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.gastronomy-animated.active .gastronomy-pastica{
+  bottom: -1%;
+  right: 1%;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: 260ms;
+}
+
+/* SIN hover (queda fijo tras activarse) */
+.gastronomy-animated:hover .gastronomy-tacos,
+.gastronomy-animated:hover .gastronomy-aguitas,
+.gastronomy-animated:hover .gastronomy-pastica{
+  /* intencionalmente vacÃ­o */
+}
+
+.overlay-text {
+  max-width: 600px;
+  color: white;
+  text-align: left;
+  padding: 65px;
+  background: rgba(0, 0, 0, 0.5);  /* ðŸ”¥ Fondo translÃºcido */
+  border-radius: 10%;    
+  right: 4%;
+  z-index: 2;
+  position: relative;
+  pointer-events: auto;
+}
+
+.overlay-text h2 { 
+  font-size: 2.8rem;   /* ðŸ”¥ bajamos un poco */
+  margin-bottom: 15px; 
+  line-height: 1.2;
+  text-transform: uppercase; /* estilo elegante */
+}
+
+.overlay-text p { 
+  font-size: 1.3rem;   /* ðŸ”¥ un poco mÃ¡s compacto */
+  margin-bottom: 12px; 
+  line-height: 1.6;
+}
+.overlay-text strong { display: block; font-size: 1.3rem; margin-top: 10px; }
+
+.overlay-text button {
+  background-color: #660099;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.overlay-text button:hover { background-color: #4b0075; }
+
+/* ============ MARCAS ============ */
+.brands-carousel {
+  overflow: hidden;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 40px;
+  animation: scroll-carousel 40s linear infinite;
+}
+
+.carousel-track img {
+  height: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.tu-imagen {
+  height: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tu-imagen:hover { filter: grayscale(50%); transform: scale(1.1); }
+.tu-imagen.selected { filter: grayscale(100%); }
+
+@keyframes scroll-carousel {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============ CINE ============ */
+.cinema-container {
+  position: relative;
+  background: url('../img/HOME/BANNER CINERMARK/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 525px;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.cinema-container::before,
+.cinema-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cinema-container::before {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.12), transparent 35%),
+    radial-gradient(circle at 80% 15%, rgba(102, 0, 153, 0.4), transparent 45%),
+    radial-gradient(circle at 60% 75%, rgba(0, 204, 255, 0.35), transparent 40%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.04) 0px,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+  mix-blend-mode: screen;
+  filter: blur(18px);
+  animation: cinema-aurora 16s ease-in-out infinite alternate, cinema-scan 9s linear infinite;
+}
+
+.cinema-container::after {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.65) 45%, rgba(0, 0, 0, 0.9) 100%),
+    linear-gradient(90deg, transparent 46%, rgba(102, 0, 153, 0.2) 50%, transparent 54%);
+  background-size: 100% 100%, 160% 100%;
+  background-position: center, 40% 0;
+  animation: cinema-column 12s ease-in-out infinite;
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+
+.cinema-container h2 {
+  color: #fff;
+  padding-top: 20px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 2px;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.55);
+}
+
+.cinema-slider {
+  position: relative;
+  padding: 0 clamp(24px, 6vw, 80px);
+  z-index: 1;
+  perspective: 1200px;
+}
+
+.cinema-slider::before,
+.cinema-slider::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  width: 6px;
+  background: linear-gradient(180deg, rgba(102, 0, 153, 0) 0%, rgba(102, 0, 153, 0.55) 50%, rgba(0, 204, 255, 0) 100%);
+  filter: blur(1px);
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.cinema-slider::before { left: clamp(8px, 4vw, 32px); }
+.cinema-slider::after { right: clamp(8px, 4vw, 32px); }
+
+.cinema-slider .slick-list {
+  margin: 0 -14px;
+  overflow: visible;
+  position: relative;
+}
+
+.cinema-slider .slick-list::after {
+  content: "";
+  position: absolute;
+  top: -18px;
+  bottom: -18px;
+  width: 10px;
+  left: -8%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(102, 0, 153, 0.9) 50%, rgba(0, 204, 255, 0) 100%);
+  box-shadow:
+    0 0 22px rgba(102, 0, 153, 0.65),
+    0 0 32px rgba(0, 204, 255, 0.45);
+  opacity: 0.8;
+  filter: blur(0.4px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: cinema-sweep 6s linear infinite;
+}
+
+.cinema-slider .slick-slide {
+  padding: 0 14px;
+  display: flex;
+  transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
+}
+
+.movie-slide {
+  display: flex !important;
+  justify-content: center;
+  height: 100%;
+}
+
+.movie-card {
+  background-color: #000;
+  color: #fff;
+  width: min(240px, 100%);
+  padding: clamp(16px, 2vw, 22px);
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease, filter 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 12px 28px rgba(75, 0, 117, 0.35);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  transform-origin: center center;
+  transform: translateY(6px) scale(0.94) rotateY(-10deg);
+  filter: saturate(0.9);
+  animation: cinema-float 6s ease-in-out infinite alternate;
+}
+
+.movie-card::before {
+  content: "";
+  position: absolute;
+  inset: -40% 30% 60% -30%;
+  background:
+    linear-gradient(120deg, rgba(102, 0, 153, 0.18), rgba(0, 204, 255, 0.18), rgba(255, 255, 255, 0)),
+    linear-gradient(90deg, transparent 46%, rgba(255, 255, 255, 0.32) 50%, transparent 54%);
+  background-repeat: no-repeat;
+  background-size: 140% 140%, 18% 100%;
+  background-position: center, 50% 0;
+  transform: rotate(12deg);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.6;
+  animation: cinema-beam 4.8s ease-in-out infinite alternate;
+}
+
+.movie-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.18), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.movie-card:hover {
+  background-color: #ffffff;
+  color: #000;
+  transform: translateY(-12px) scale(1.04) rotateY(6deg);
+  filter: brightness(1.05);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45), 0 0 40px rgba(102, 0, 153, 0.45);
+}
+
+.cinema-slider .slick-slide.slick-active .movie-card {
+  transform: translateY(-4px) scale(0.98) rotateY(-6deg);
+  filter: saturate(1);
+}
+
+.cinema-slider .slick-slide.slick-active:nth-child(even) .movie-card {
+  transform: translateY(-6px) scale(1) rotateY(8deg) rotateX(-3deg);
+}
+
+.cinema-slider .slick-slide.slick-active:nth-child(odd) .movie-card {
+  transform: translateY(-6px) scale(1) rotateY(-8deg) rotateX(3deg);
+}
+
+.cinema-slider .slick-slide.slick-center .movie-card {
+  transform: translateY(-18px) scale(1.12) rotateY(0deg);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.55), 0 0 52px rgba(102, 0, 153, 0.6), 0 0 24px rgba(0, 204, 255, 0.35);
+  filter: saturate(1.1) brightness(1.02);
+  animation: cinema-pop 0.45s ease, cinema-bob 4s ease-in-out infinite alternate;
+}
+
+.cinema-slider .slick-slide.slick-center .movie-card::before {
+  opacity: 0.95;
+  animation-duration: 3.6s;
+}
+
+.cinema-slider .slick-slide:not(.slick-active) { opacity: 0.5; filter: blur(0.3px); }
+
+.movie-card:hover::before {
+  transform: translateY(-6%) rotate(6deg) scale(1.08);
+  opacity: 0.9;
+}
+
+.movie-card:hover::after {
+  opacity: 1;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.movie-card .ver-mas {
+  align-self: center;
+  margin-top: auto;
+  padding: 6px 18px;
+  background-color: purple;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.movie-card:hover .ver-mas {
+  background-color: #660099;
+  color: #ffffff;
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(160, 32, 240, 0.4);
+}
+
+.movie-card .ver-mas::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 6px;
+  opacity: 0;
+  transform: translateY(2px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.movie-card:hover .ver-mas::after {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.cinema-slider .slick-track {
+  transition: transform 0.45s ease !important;
+}
+
+.cinema-slider .slick-slide.slick-active:not(.slick-center) .movie-card {
+  animation: cinema-pop 0.45s ease, cinema-float 6s ease-in-out infinite alternate;
+}
+
+.cinema-slider .slick-prev,
+.cinema-slider .slick-next {
+  width: 48px;
+  height: 48px;
+  z-index: 2;
+}
+
+.cinema-slider .slick-prev { left: 8px; }
+.cinema-slider .slick-next { right: 8px; }
+
+.cinema-slider .slick-prev:before,
+.cinema-slider .slick-next:before {
+  color: #ffffff;
+  font-size: 32px;
+}
+
+.cinema-slider .slick-dots {
+  bottom: -32px;
+}
+
+.cinema-slider .slick-dots li button:before {
+  color: #ffffff;
+  opacity: 0.35;
+}
+
+.cinema-slider .slick-dots li.slick-active button:before {
+  opacity: 0.9;
+}
+
+.cinema-empty {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 32px 0;
+}
+
+.movie-popover-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  animation: fade-in 200ms ease;
+}
+
+.movie-popover {
+  background: rgba(10, 10, 10, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 28px rgba(102, 0, 153, 0.45);
+  max-width: 420px;
+  width: 90%;
+  overflow: hidden;
+  animation: pop-in 200ms ease;
+}
+
+.movie-popover img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.movie-popover-body {
+  padding: 18px 20px 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.movie-popover-body h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.movie-popover-body p {
+  margin: 0;
+  color: #cfcfcf;
+  font-size: 0.95rem;
+}
+
+.popover-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.popover-link,
+.popover-close {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.popover-link {
+  background: linear-gradient(135deg, #660099, #00c0ff);
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35), 0 0 20px rgba(102, 0, 153, 0.35);
+}
+
+.popover-close {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.popover-link:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4), 0 0 22px rgba(102, 0, 153, 0.4); }
+.popover-close:hover { transform: translateY(-1px); background: rgba(255, 255, 255, 0.16); }
+
+@keyframes cinema-aurora {
+  0% { transform: translate3d(-8%, -4%, 0) scale(1); }
+  50% { transform: translate3d(4%, 6%, 0) scale(1.08); }
+  100% { transform: translate3d(-4%, 10%, 0) scale(0.98); }
+}
+
+@keyframes cinema-scan {
+  0% { opacity: 0.35; transform: translateX(-6%); }
+  50% { opacity: 0.55; transform: translateX(4%); }
+  100% { opacity: 0.35; transform: translateX(-4%); }
+}
+
+@keyframes cinema-pop {
+  0% { transform: translateY(8px) scale(0.96); opacity: 0.85; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes cinema-float {
+  0% { transform: translateY(6px) scale(0.94) rotateY(-10deg) rotateX(0deg); }
+  50% { transform: translateY(0) scale(0.95) rotateY(-6deg) rotateX(1.5deg); }
+  100% { transform: translateY(8px) scale(0.94) rotateY(-8deg) rotateX(-1.5deg); }
+}
+
+@keyframes cinema-beam {
+  0%   { background-position: center, 40% 0; opacity: 0.45; }
+  50%  { background-position: center, 50% 0; opacity: 0.85; }
+  100% { background-position: center, 60% 0; opacity: 0.55; }
+}
+
+@keyframes cinema-column {
+  0%   { background-position: center, 42% 0; }
+  50%  { background-position: center, 58% 0; }
+  100% { background-position: center, 45% 0; }
+}
+
+@keyframes cinema-sweep {
+  0%   { transform: translateX(-12%); opacity: 0.7; }
+  50%  { transform: translateX(52%); opacity: 1; }
+  100% { transform: translateX(120%); opacity: 0.7; }
+}
+
+@keyframes cinema-bob {
+  0%   { transform: translateY(-16px) scale(1.1); }
+  50%  { transform: translateY(-10px) scale(1.12); }
+  100% { transform: translateY(-14px) scale(1.11); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pop-in {
+  0%   { transform: translateY(12px) scale(0.96); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+/* Carrusel mÃ³vil */
+
+/* ============ FIND SECTION ============ */
+.find-section {
+  padding: 80px 40px;
+  text-align: center;
+  background-color: white;
+}
+
+.find-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.find-section p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.event-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover { transform: translateY(-5px); }
+
+.event-date {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 10;
+}
+
+.event-date .day { display: block; font-size: 1.5rem; font-weight: bold; color: #333; }
+.event-date .month { display: block; font-size: 0.9rem; color: #666; }
+
+.event-card img { width: 100%; height: 250px; object-fit: cover; }
+
+.event-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 40px 20px 20px;
+  text-decoration: none;
+}
+
+.event-category {
+  background: rgba(62, 61, 62, 0.8);
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.event-overlay h3 { font-size: 1.2rem; margin-bottom: 15px; line-height: 1.4; }
+.event-author { font-size: 0.9rem; opacity: 0.8; }
+
+/* ============ MAPA / CONTACTO / IG ============ */
+.map {
+  padding: 2rem;
+  background-color: #111;
+  color: #fff;
+}
+
+.info-y-mapa {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.info-section { flex: 1; min-width: 300px; }
+
+.info-content {
+  background-color: #2c2c2c;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.info-content h2 { margin-bottom: 20px; }
+.info-content ul { margin: 20px 0; padding-left: 20px; }
+.info-content li { margin-bottom: 10px; line-height: 1.5; }
+
+.Registro {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Registro:hover { background-color: #e5e5e5; }
+
+.map-container { height: auto; flex: 1; min-width: 300px; }
+
+.map-container iframe {
+  flex: 1;
+  height: 100%;
+  min-height: 795px;
+  border-radius: 10px;
+  border: 0;
+}
+
+.contacto-section .fila {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.contacto-section .columna { flex: 1; min-width: 200px; margin-right: 1rem; }
+.contacto-section h4 { margin-bottom: 10px; color: white; }
+.contacto-section p { display: flex; align-items: center; margin-bottom: 10px; }
+
+hr { border-color: #444; margin: 1rem 0; }
+
+/* GalerÃ­a de Instagram */
+.insta-gallery {
+  /* borra el padding enorme y el padding-left de 100px */
+  padding: 0 !important;
+  margin-top: 16px !important;
+  background: transparent !important;
+  gap: 0 !important;
+  width: 100%;
+}
+
+.hover-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.insta-card:hover .hover-info { opacity: 1; }
+
+/* ============ FOOTER ============ */
+.footer-home {
+  background-color: #2c2c2c;
+  color: white;
+  padding: 60px 40px 30px;
+}
+
+.footer-content-home {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-logo-home { height: 60px; margin-bottom: 20px; }
+
+.footer-section-home p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.footer-contact-home { display: flex; flex-direction: column; gap: 15px; }
+
+.footer-contact-item-home {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.footer-contact-item-home svg { color: #660099; font-size: 1rem; }
+
+.footer-section-home h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-section-home ul { list-style: none; padding: 0; margin: 0; }
+.footer-section-home ul li { margin-bottom: 10px; }
+
+.footer-section-home ul li span {
+  color: #ccc;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.footer-section-home ul li span:hover { color: #660099; }
+
+/* ============ RESPONSIVE ============ */
+
+/* MÃ³viles pequeÃ±os */
+@media (max-width: 425px) {
+  .main-header-fon { height: 60vh; min-height: 360px; }
+
+  .top-bar { flex-direction: column; padding: 15px 20px; text-align: center; gap: 10px; }
+
+  .top-bar-wrapper { flex-direction: row; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
+
+  .top-bar-link { padding: 8px 15px; font-size: 0.9rem; }
+
+  /* Botones sin huecos en mÃ³vil (flujo normal) */
+  .main-buttons {
+    margin-top: 16px;     /* se quita el negativo */
+    padding: 0 20px;
+    flex-direction: column;
+  }
+
+  .image-button { width: 100%; max-width: 350px; margin: 0; }
+  .image-button img { display: block; width: 100%; object-fit: contain; }
+
+  /* GastronomÃ­a: evitar solapamientos -> ocultamos capas animadas y usamos solo el fondo */
+  .gastronomy {
+    background-image: url('../img/HOME/BANNER GASTRONOMIA/img_Gastronomia.jpg');
+    height: auto;
+    min-height: 60vh;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .gastronomy-animated { display: none !important; } /* âœ… evita doble apariciÃ³n/solape */
+
+  .overlay-text { padding: 30px 20px; max-width: 100%; position: relative; z-index: 2; }
+  .overlay-text h2 { font-size: 2rem; margin-bottom: 15px; }
+  .overlay-text p { font-size: 1rem; margin-bottom: 12px; }
+  .overlay-text strong { font-size: 1.1rem; }
+  .overlay-text button { padding: 12px 25px; font-size: 0.9rem; }
+
+  .cinema-container { width: 100%; padding: 30px 20px; min-height: auto; background-size: cover; background-position: center; background-repeat: no-repeat; }
+  .cinema-container h2 { font-size: 1.8rem; margin-bottom: 25px; }
+
+  .cinema-slider { padding: 0 8px; }
+  .cinema-slider .slick-slide { padding: 0 6px; }
+  .cinema-slider .slick-prev,
+  .cinema-slider .slick-next { display: none !important; }
+  .cinema-slider .slick-dots { bottom: -24px; }
+  .movie-card { width: 100%; max-width: 260px; padding: 18px; }
+  .movie-card,
+  .cinema-slider .slick-slide .movie-card {
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+  }
+  .cinema-slider .slick-slide:not(.slick-active) {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .find-section { padding: 50px 20px; width: 100%; }
+  .find-section h2 { font-size: 1.8rem; margin-bottom: 15px; }
+  .find-section p { font-size: 1rem; margin-bottom: 40px; }
+
+  .events-grid { grid-template-columns: 1fr; gap: 25px; }
+  .event-card img { height: 200px; }
+  .event-overlay { padding: 25px 15px 15px; }
+  .event-overlay h3 { font-size: 1.1rem; }
+
+  .map { padding: 30px 20px; }
+  .info-y-mapa { flex-direction: column; gap: 1.5rem; }
+  .info-content { width: 100%; padding: 1.5rem; }
+  .info-content h2 { font-size: 1.5rem; }
+  .info-content p { font-size: 0.9rem; }
+  .info-content ul { padding-left: 15px; }
+  .info-content li { font-size: 0.9rem; }
+
+  .map-container { width: 100%; height: 300px; }
+  .map-container iframe { min-height: 300px; }
+
+  .contacto-section .fila { flex-direction: column; gap: 15px; }
+  .contacto-section .columna { margin-right: 0; margin-bottom: 15px; }
+  .contacto-section h4 { font-size: 1rem; }
+  .contacto-section p { font-size: 0.9rem; }
+
+  .insta-gallery { width: 100%; gap: 10px; padding: 40px 15px 25px; margin-top: 40px; }
+  .insta-card { width: calc(50% - 5px); height: 150px; }
+  .hover-info { font-size: 14px; }
+
+  .carousel-track { gap: 20px; animation-duration: 60s; }
+  .carousel-track img, .tu-imagen { height: 70px; }
+}
+
+/* Tablet portrait / mÃ³viles grandes */
+@media (max-width: 768px) {
+  .main-header-fon { height: 60vh; min-height: 360px; }
+
+  .top-bar { flex-direction: column; padding: 15px 20px; text-align: center; gap: 10px; }
+
+  .top-bar-wrapper {
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .top-bar-link { padding: 8px 15px; font-size: 0.9rem; }
+
+  .main-buttons {
+    position: relative;
+    left: auto;
+    transform: none;
+    margin-top: 16px;     /* sin negativo en mÃ³vil */
+    width: 100%;
+    padding: 0 20px;
+    flex-direction: column;
+  }
+
+  .image-button { width: 100%; max-width: 350px; margin: 0 auto; }
+
+  .gastronomy { height: auto; min-height: 60vh; justify-content: center; padding: 40px 20px; text-align: center; }
+
+  .overlay-text { padding: 30px 20px; max-width: 100%; }
+  .overlay-text h2 { font-size: 2rem; margin-bottom: 15px; }
+  .overlay-text p { font-size: 1rem; margin-bottom: 12px; }
+  .overlay-text strong { font-size: 1.1rem; }
+  .overlay-text button { padding: 12px 25px; font-size: 0.9rem; }
+
+  .cinema-container { width: 100%; padding: 30px 20px; min-height: auto; background-size: cover; background-position: center; background-repeat: no-repeat; }
+  .cinema-container h2 { font-size: 1.8rem; margin-bottom: 25px; }
+
+  .cinema-slider { padding: 0 12px; }
+  .cinema-slider .slick-slide { padding: 0 8px; }
+  .cinema-slider .slick-prev,
+  .cinema-slider .slick-next { display: none !important; }
+  .cinema-slider .slick-dots { bottom: -26px; }
+  .movie-card { width: 100%; max-width: 280px; padding: 20px; }
+  .movie-card,
+  .cinema-slider .slick-slide .movie-card {
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+  }
+  .cinema-slider .slick-slide:not(.slick-active) {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .find-section { padding: 50px 20px; }
+  .find-section h2 { font-size: 1.8rem; margin-bottom: 15px; }
+  .find-section p { font-size: 1rem; margin-bottom: 40px; }
+
+  .events-grid { grid-template-columns: 1fr; gap: 25px; }
+  .event-card img { height: 200px; }
+  .event-overlay { padding: 25px 15px 15px; }
+  .event-overlay h3 { font-size: 1.1rem; }
+
+  .map { padding: 30px 20px; }
+  .info-y-mapa { flex-direction: column; gap: 1.5rem; }
+  .info-content { padding: 1.5rem; }
+  .info-content h2 { font-size: 1.5rem; }
+  .info-content p { font-size: 0.9rem; }
+  .info-content ul { padding-left: 15px; }
+  .info-content li { font-size: 0.9rem; }
+
+  .map-container { margin-left: 0; height: 300px; width: 100%; }
+  .map-container iframe { min-height: 300px; }
+
+  .contacto-section .fila { flex-direction: column; gap: 15px; }
+  .contacto-section .columna { margin-right: 0; margin-bottom: 15px; }
+  .contacto-section h4 { font-size: 1rem; }
+  .contacto-section p { font-size: 0.9rem; }
+
+  .insta-gallery { gap: 10px; padding: 40px 15px 25px; margin: 40px auto 0; width: 100%; }
+  .insta-card { width: calc(50% - 5px); height: 150px; }
+  .hover-info { font-size: 14px; }
+
+  .carousel-track { gap: 20px; animation-duration: 60s; }
+  .carousel-track img, .tu-imagen { height: 70px; }
+}
+
+/* Tablets landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-header-fon { height: 60vh; }
+  .top-bar { padding: 12px 25px; }
+
+  .main-buttons {
+    margin-top: -40px;   /* pequeÃ±o lift, sin huecos */
+    padding: 0 30px;
+    flex-direction: row;
+  }
+
+  .image-button { width: 280px; }
+
+  .gastronomy { height: 80vh; padding-left: 4%; }
+
+  .overlay-text { max-width: 500px; padding: 35px; }
+  .overlay-text h2 { font-size: 2.3rem; }
+  .overlay-text p { font-size: 1.1rem; }
+
+  .cinema-container { padding: 25px; background-size: cover; background-position: center; background-repeat: no-repeat; }
+
+  .cinema-slider { padding: 0 40px; }
+  .cinema-slider .slick-slide { padding: 0 12px; }
+  .movie-card { width: min(240px, 100%); padding: 20px; }
+
+  .find-section { padding: 60px 30px; }
+  .find-section h2 { font-size: 2.2rem; }
+
+  .events-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+
+  .map { padding: 40px 30px; }
+  .info-content { padding: 1.8rem; }
+  .map-container iframe { min-height: 600px; }
+
+  .insta-gallery { gap: 12px; padding: 50px 20px 30px; margin-top: 50px; }
+  .insta-card { width: 180px; height: 180px; }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1400px) {
+  .main-buttons { gap: 10px; margin-top: -70px; }
+  .image-button { width: 350px; }
+  .overlay-text { max-width: 700px; }
+  .overlay-text h2 { font-size: 3.2rem; }
+  .overlay-text p { font-size: 1.3rem; }
+  .events-grid { grid-template-columns: repeat(3, 1fr); max-width: 1400px; }
+  .insta-card { width: 220px; height: 220px; }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track { animation: none; }
+  .cinema-slider .slick-track { transition: none !important; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+
+  .gastronomy-tacos,
+  .gastronomy-aguitas,
+  .gastronomy-pastica{
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Modo paisaje en mÃ³viles */
+@media (max-width: 768px) and (orientation: landscape) {
+  .main-header-fon { height: 60vh; }
+  .gastronomy { height: 100vh; }
+  .overlay-text h2 { font-size: 1.8rem; }
+  .overlay-text p { font-size: 0.9rem; }
+}
+
+/* ======= FIX: VIDEO 100% VISIBLE EN MÓVIL (sin recorte) ======= */
+@media (max-width: 768px) {
+  /* El header deja de forzar altura de pantalla */
+  .main-header-fon {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Mantener altura estable con proporción fija */
+  .video-container {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 0 !important;
+    padding-top: 56.25%;
+    overflow: hidden !important;
+  }
+
+  .background-video,
+  .hero-image {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    max-height: none !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hero-link {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block;
+    z-index: 1;
+  }
+
+  .main-buttons {
+    margin-top: 16px !important;   
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-header-fon {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .video-container {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 0 !important;
+    padding-top: 56.25%;
+    overflow: hidden !important;
+  }
+  .background-video,
+  .hero-image {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    max-height: none !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hero-link {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block;
+    z-index: 1;
+  }
+}
+
+
+.main-buttons {
+  margin-bottom: 0 !important;
+}
+
+.main-buttons + * {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: 1px solid transparent; 
+}
+
+.category-carousel,
+.CategoryCarousel,
+#CategoryCarousel,
+.carousel-categorias,
+.carousel-wrapper {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: 1px solid transparent; 
+}
+
+.category-carousel > *:first-child,
+.CategoryCarousel > *:first-child,
+#CategoryCarousel > *:first-child {
+  margin-top: 0 !important;
+}
+
+.category-carousel h2,
+.CategoryCarousel h2,
+#CategoryCarousel h2,
+.category-carousel .title,
+.CategoryCarousel .title {
+  margin-top: 0 !important;
+}
+
+/* Desktop/tablet muestran animaciÃ³n; mÃ³vil la oculta (ya arriba en @media 768px) */
+@media (min-width: 769px) {
+  .gastronomy-animated{
+    display: block !important;
+    pointer-events: auto !important;  
+    z-index: 1;
+  }
+  .overlay-text{
+    pointer-events: none !important;   
+    z-index: 2;                        
+  }
+  .overlay-text button{
+    pointer-events: auto !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .gastronomy {
+    background-image: url('../Material/GastronomiaHome/GASTRONOMIA-BACK.png') !important;
+    height: auto;
+    min-height: 60vh;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  /* Mostrar SOLO bebidas */
+  .gastronomy-animated .gastronomy-tacos,
+  .gastronomy-animated .gastronomy-pastica {
+    display: none !important;
+  }
+
+  .gastronomy-animated .gastronomy-aguitas {
+    display: block !important;
+    width: 70%;              
+    max-width: 320px;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+.cinema-container h2{
+  margin-bottom: 70px; 
+}
+
+
+
+
+
+/* ==============================
+   GASTRONOMÃA â€” Ajuste especÃ­fico 1900px+
+============================== */
+@media (min-width: 1900px) {
+  .overlay-text { max-width: 680px; }
+
+  /* TACOS: mÃ¡s grandes y mÃ¡s a la izquierda */
+  .gastronomy-animated.active .gastronomy-tacos{
+    width: clamp(600px, 34vw, 780px) !important; /* antes mÃ¡s chico */
+    left: 35% !important;                        /* antes 62% */
+    bottom: 3% !important;
+    z-index: 3;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+
+
+  .gastronomy-animated.active .gastronomy-pastica{
+    left: 20% !important;
+    bottom: 1% !important;
+    z-index: 3;
+  }
+
+  .gastronomy-animated.active .gastronomy-aguitas{
+    left: 25% !important;                        
+    bottom: 6% !important;
+    z-index: 2;
+  }
+
+
+
+
+}
+
+
+
+
+/* ==============================
+   GASTRONOMÃA â€” Ajustes finos (Desktop)
+============================== */
+@media (min-width: 1200px) {
+  /* Texto mÃ¡s pequeÃ±o */
+  .overlay-text h2 { font-size: 2rem; }
+  .overlay-text p { font-size: 1rem; }
+  .overlay-text strong { font-size: 0.9rem; }
+
+  /* Orden de profundidad */
+  .gastronomy-animated .gastronomy-aguitas { z-index: 1; }
+  .gastronomy-animated .gastronomy-pastica { z-index: 2; }
+  .gastronomy-animated .gastronomy-tacos   { z-index: 3; }
+
+  /* === TACOS (delante) === */
+  .gastronomy-animated.active .gastronomy-tacos {
+    width: 85% !important;
+    height: auto !important;
+    bottom: 5% !important;   /* ðŸ”¼ sÃºbelos/bÃ¡jalos */
+    left: 49% !important;    /* ðŸ”¼ muÃ©velos horizontal */
+    transform: translateX(-50%) scale(1.3) !important;
+  }
+
+  /* === PASTAS (medio) === */
+  .gastronomy-animated.active .gastronomy-pastica {
+    width: 85% !important;
+    height: auto !important;
+    bottom: 1% !important;   /* ðŸ”¼ sÃºbelos/bÃ¡jalos */
+    left: 49% !important;    /* ðŸ”¼ muÃ©velos horizontal */
+    transform: translateX(-50%) scale(1.2) !important;
+  }
+
+  /* === VASOS (fondo, mÃ¡s altos) === */
+  .gastronomy-animated.active .gastronomy-aguitas {
+    width: auto !important;
+    height: 85% !important;
+    bottom: 0% !important;  /* ðŸ”¼ sÃºbelos/bÃ¡jalos */
+    left: 49% !important;    /* ðŸ”¼ muÃ©velos horizontal */
+    transform: translateX(-50%) scale(1.15) !important;
+    opacity: 0.95;
+  }
+}
+
+
+/* Ajuste para que el texto no sea demasiado ancho en desktop */
+@media (min-width: 1200px) {
+  .overlay-text {
+    max-width: 600px !important;  /* ðŸ”’ controla ancho mÃ¡ximo */
+    line-height: 3;              /* mejor legibilidad */
+    word-wrap: break-word;
+  }
+
+  .overlay-text h2 { font-size: 2rem; }
+  .overlay-text p  { font-size: 1rem; }
+}
+
+
+.overlay-text strong {
+  display: inline;       
+  font-size: inherit;    
+  font-weight: 700;          
+}

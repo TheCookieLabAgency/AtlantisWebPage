@@ -1,0 +1,167 @@
+.social-gallery {
+  --sg-gap: 24px;
+  --sg-radius: 12px;
+  --sg-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --sg-shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --sg-card-w: clamp(320px, 30vw, 380px);  /* ancho uniforme y responsive */
+
+  width: 100%;
+  padding: 24px 20px;
+  margin: 0 auto;
+  background: transparent;
+}
+.social-gallery * { box-sizing: border-box; }
+
+/* ===== Acciones arriba (botones a redes) ===== */
+.sg-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;   /* centrado */
+  align-items: center;
+  margin: 0 auto 24px auto;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+.sg-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  background: #2a2a2a;
+  color: #fff;
+  box-shadow: var(--sg-shadow);
+  transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease;
+  font-weight: 600;
+}
+.sg-action svg { font-size: 1.1rem; }
+.sg-action:hover,
+.sg-action:focus-visible {
+  background: #7b21c1;
+  transform: translateY(-1px);
+  box-shadow: var(--sg-shadow-hover);
+}
+
+/* ===== Grid centrado ===== */
+.sg-grid {
+  display: grid;
+  gap: var(--sg-gap);
+  align-items: stretch;        /* todas al mismo alto */
+  justify-content: center;     /* centrado en desktop */
+  margin: 0 auto;
+}
+.sg-grid--three {
+  grid-template-columns: repeat(3, var(--sg-card-w));
+  max-width: calc(3 * var(--sg-card-w) + 2 * var(--sg-gap));
+}
+
+/* ===== Card ===== */
+.sg-card {
+  width: var(--sg-card-w);
+  position: relative;
+  background: #1c1c1c;
+  border-radius: var(--sg-radius);
+  overflow: hidden;
+  box-shadow: var(--sg-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+}
+.sg-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sg-shadow-hover);
+}
+
+/* ===== Wrapper común para embeds (uniforme 9:16) ===== */
+.sg-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;      /* vertical tipo reel */
+  background: #111;
+  overflow: hidden;
+  flex: 1;                   /* ocupa el alto disponible de la card */
+}
+
+/* Contenido del embed ocupa todo */
+.sg-embed > * {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  background: #111 !important;
+  transform: none !important;
+}
+
+/* Instagram: evita min-width interna y asegura fill */
+.sg-embed--instagram .instagram-media {
+  min-width: 0 !important;    /* IG suele poner 326px: lo anulamos en desktop */
+  border: 0 !important;
+}
+
+/* TikTok ya trae su iframe; con wrapper basta */
+.sg-embed--tiktok .tiktok-embed {
+  border: 0 !important;
+}
+
+/* Facebook: iframe ocupa 100% con el wrapper */
+.sg-embed--facebook iframe {
+  border: 0;
+}
+
+/* Footer / título */
+.sg-footer {
+  padding: 12px 14px 14px;
+  background: #1f1f1f;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.sg-title {
+  margin: 0;
+  color: #f2f2f2;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1100px) {
+  .sg-grid--three {
+    grid-template-columns: repeat(2, var(--sg-card-w));
+    max-width: calc(2 * var(--sg-card-w) + 1 * var(--sg-gap));
+  }
+}
+
+@media (max-width: 700px) {
+  .sg-grid--three {
+    grid-template-columns: var(--sg-card-w);
+    max-width: var(--sg-card-w);
+  }
+  .sg-actions { gap: 10px; }
+  .sg-action { padding: 9px 12px; }
+}
+
+/* Móviles MUY angostos (<360px):
+   Instagram exige ~326px mínimos. Para evitar el “cuadrito”,
+   escalamos el wrapper para que llene ancho sin recortar. */
+@media (max-width: 360px) {
+  .sg-card { width: 326px; }
+  .social-gallery { padding-left: 0; padding-right: 0; }
+  .sg-grid--three { max-width: 326px; }
+
+  .sg-embed--instagram {
+    transform-origin: top left;
+    transform: scale(calc((100vw - 24px) / 326)); 
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .sg-card, .sg-action { transition: none; }
+}
+@media (prefers-contrast: more) {
+  .sg-card { box-shadow: 0 0 0 2px rgba(255,255,255,0.25); }
+  .sg-action { box-shadow: 0 0 0 2px rgba(255,255,255,0.25); }
+}

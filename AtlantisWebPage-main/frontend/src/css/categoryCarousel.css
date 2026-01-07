@@ -1,0 +1,187 @@
+/* 🔥 CATEGORY CAROUSEL - KEVIN POWELL INFINITE SCROLL STYLES */
+
+.categories-section {
+  padding: 30px 0;
+  background-color: #fff;
+  margin-top: 220px;
+}
+
+/* Scroller base styles */
+.scroller {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.scroller__inner {
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+/* Cuando está animado */
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  /* Mask gradient para efecto fade en los bordes */
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+/* Control de dirección */
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+/* Control de velocidad */
+.scroller[data-speed="fast"] {
+  --_animation-duration: 60s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 100s;
+}
+
+/* Keyframe principal - técnica de Kevin Powell */
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 20px));
+  }
+}
+
+/* 🔥 ESTILOS PARA ITEMS DE CATEGORÍAS */
+.category-carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  width: 250px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.category-carousel-item:hover {
+  transform: scale(1.05);
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.3s ease;
+}
+
+.category-carousel-item:hover .category-image {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* 🔥 RESPONSIVE DESIGN CON CONSIDERACIÓN PARA SCROLLERS */
+@media (max-width: 1024px) {
+  .categories-section {
+    margin-top: 0px;
+  }
+
+  .category-carousel-item {
+    width: 220px;
+  }
+
+  /* Ajustar velocidad en tablets */
+  .scroller[data-speed="fast"] {
+    --_animation-duration: 60s;
+  }
+  
+  .scroller[data-speed="slow"] {
+    --_animation-duration: 100s;
+  }
+}
+
+@media (max-width: 768px) {
+  .categories-section {
+    margin-top: 50px;
+    padding: 20px 0;
+  }
+
+  .category-carousel-item {
+    width: 280px;
+  }
+
+  .category-image {
+    height: 200px;
+  }
+
+  .scroller__inner {
+    gap: 25px;
+  }
+
+  /* Velocidad más lenta en móviles para mejor legibilidad */
+  .scroller[data-speed="fast"] {
+    --_animation-duration: 60s;
+  }
+  
+  .scroller[data-speed="slow"] {
+    --_animation-duration: 100s;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-carousel-item {
+    width: 250px;
+  }
+
+  .category-image {
+    height: 180px;
+  }
+
+  .scroller__inner {
+    gap: 20px;
+  }
+}
+
+/* Para pantallas grandes */
+@media (min-width: 1400px) {
+  .category-carousel-item {
+    width: 280px;
+  }
+
+  .scroller__inner {
+    gap: 50px;
+  }
+}
+
+/* 🔥 ACCESIBILIDAD - RESPETO A PREFERS-REDUCED-MOTION */
+@media (prefers-reduced-motion: reduce) {
+  .scroller[data-animated="true"] .scroller__inner {
+    animation: none;
+  }
+  
+  .scroller[data-animated="true"] {
+    -webkit-mask: none;
+    mask: none;
+  }
+  
+  .scroller__inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
