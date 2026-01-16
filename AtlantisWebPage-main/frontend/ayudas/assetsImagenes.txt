@@ -1,0 +1,8 @@
+Assets e imagenes
+
+- Logos marcas: src/Material/logos/
+- Imagenes marcas: src/img/MARCAS/
+- Banners inicio: src/Material/banner_inicio/
+- Banner principal video: src/Material/BANNER-VIDEO.mp4
+- Carrusel marcas home: src/img/HOME/CARRUSEL MARCAS/
+- Cartelera cine: src/Material/MaterialCartelera/cine

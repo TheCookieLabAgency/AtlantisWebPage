@@ -1,0 +1,8 @@
+Componentes comunes
+
+- Navegacion: src/components/Navigation.js
+- Footer: src/components/Footer.js
+- Whatsapp: src/components/Whatsapp.js
+- Instagram/Galeria: src/components/InstagramGallery.js
+
+Cambios aqui impactan varias paginas.

@@ -1,0 +1,67 @@
+.nmt2-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.nmt2-modal-panel {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  width: min(520px, 95vw);
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 16px;
+  position: relative;
+}
+
+.nmt2-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 1px solid #999999;
+  background: #f2f2f2;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.nmt2-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nmt2-modal-logo {
+  margin-top: 8px;
+}
+
+.nmt2-modal-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nmt2-modal-details {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333333;
+}
+
+.nmt2-modal-text {
+  margin: 0;
+}
+
+.nmt2-modal-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.nmt2-modal-hours {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #555555;
+}

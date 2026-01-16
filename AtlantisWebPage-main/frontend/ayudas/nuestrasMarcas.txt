@@ -1,0 +1,15 @@
+Nuestras Marcas
+
+Ubicacion:
+- Pagina principal: src/nuestras_marcas.js
+- Estilos: src/css/nuestraMarca.css
+- Tests: src/nuestras_marcas_test.js + src/css/nuestraMarcaTest.css
+         src/nuestras_marcas_test_2.js + src/css/nuestraMarcaTest2.css
+- Imagenes tarjetas: src/img/MARCAS/
+- Logos: src/Material/logos/
+
+Como agregar una marca:
+1) Importar la imagen de la marca y el logo.
+2) Agregar la marca en marcasData con id unico, name, image, category y hours opcional.
+3) Agregar el logo en brandLogos con el mismo name exacto.
+4) Si necesita mas info en popup (test 1), agregar datos en brandPopupInfo.

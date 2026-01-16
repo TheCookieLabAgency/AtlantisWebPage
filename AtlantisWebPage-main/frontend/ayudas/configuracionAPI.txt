@@ -1,0 +1,6 @@
+Configuracion API / favoritos
+
+- Variable: REACT_APP_API_BASE_URL en .env
+- Favoritos se usan en src/nuestras_marcas.js y src/nuestras_marcas_test.js
+- Endpoints: /api/favorite-programs (GET, POST, DELETE)
+- Token: localStorage "stm_token"

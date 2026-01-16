@@ -1,0 +1,11 @@
+Popups de marcas (tests)
+
+Test 1:
+- Archivo: src/nuestras_marcas_test.js
+- Modal con react-slick. Datos extra en brandPopupInfo.
+- Campos posibles: tagline, description, highlights (array), details (array {label,value}), links (array {label,url}), theme (colors).
+- DEFAULT_THEME define colores fallback.
+
+Test 2:
+- Archivo: src/nuestras_marcas_test_2.js
+- Modal simple con .nmt2-modal.

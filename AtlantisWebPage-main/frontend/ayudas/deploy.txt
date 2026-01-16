@@ -1,0 +1,16 @@
+Deploy
+
+Paso 1:
+- Subir al GitHub en una nueva branch para evitar fallos con la actualizacion.
+- Dentro de Git, hacer merge de la branch cuando este validada.
+
+Paso 2:
+- Ejecutar npm run build.
+- Comprimir (zip) la carpeta build.
+- Subirla al cPanel en la ruta public_html/atlantiscc.com.
+- Descomprimir y reemplazar todos los archivos actuales.
+- Importante: no eliminar sin antes hacer backup de los archivos actuales.
+- Si hay error al reemplazar, cambiar permisos de archivos al maximo.
+
+Nota:
+- No subir las carpetas ayudas/ ni tests/ al cPanel. Solo se sube la carpeta build generada.

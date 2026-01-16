@@ -1,0 +1,5 @@
+Disclaimer
+
+Yo, Juan, no escribi el codigo pero lo administre los ultimos 5 meses.
+La gran mayoria de errores los corregi, sin embargo puede que sigan habiendo fallas de diseno que no vi en su momento y espero puedan corregirlas.
+Si no entienden algo del codigo se pueden comunicar conmigo; en la guia de trafficker esta mi numero.

@@ -1,0 +1,16 @@
+Carrusel de cine (cartelera) - Home
+
+Ubicacion:
+- Logica: src/home_page.js (importCinemaMovies, peliculas, cinemaSettings, seccion .cinema)
+- Estilos: src/css/homePage.css (.cinema-container, .cinema-slider, .movie-card)
+- Imagenes: src/Material/MaterialCartelera/cine
+
+Como cambiar peliculas:
+1) Agregar o quitar imagenes en src/Material/MaterialCartelera/cine.
+2) El nombre del archivo se usa para el titulo. Se normaliza (guiones/underscore -> espacio) y se eliminan codigos numericos al final.
+3) El orden sale del sort() de los nombres. Si necesita orden fijo, use prefijos 01_, 02_, etc.
+
+Cuando llegan mas o menos peliculas:
+- El slider se ajusta en cinemaSettings (HomePage). En desktop muestra hasta 4, en mobile 1.
+- Si solo hay 1 pelicula, se desactivan flechas y dots.
+- Cada tarjeta abre CINEMARK_URL.

@@ -1,0 +1,14 @@
+Blogs / planes
+
+Ubicacion:
+- Paginas: src/blog1.js ... src/blog7.js
+- Estilos: src/css/blog1.css (se comparte)
+- Assets: src/Material y src/img
+
+Como crear un blog nuevo:
+1) Copiar un blog existente (ej. blog1.js) y ajustar textos e imagenes.
+2) Registrar la ruta en src/App.js.
+3) Actualizar los links entre blogs si aplica.
+
+Disclaimer:
+Se pidio renombrar blog1, blog2, blog3 por nombres reales (ej. home-lovers, fun-lovers, etc). Quedo pendiente para futura implementacion.

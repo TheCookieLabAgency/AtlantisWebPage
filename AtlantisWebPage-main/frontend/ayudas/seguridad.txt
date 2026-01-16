@@ -1,0 +1,5 @@
+Seguridad y aislamiento
+
+- Las carpetas ayudas/ y tests/ estan fuera de src/ y public/.
+- No se incluyen en el build de React.
+- Pueden subirse al repositorio (GitHub), pero no deben subirse al cPanel.

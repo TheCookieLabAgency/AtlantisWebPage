@@ -1,0 +1,12 @@
+Banners del inicio (hero)
+
+Ubicacion:
+- Logica: src/home_page.js (heroSlides, heroIndex, prev/next)
+- Estilos: src/css/homePage.css (.main-header-fon, .video-container, .hero-image, .hero-nav)
+- Assets: src/Material/BANNER-VIDEO.mp4 y src/Material/banner_inicio/
+
+Como editar:
+- Reemplazar bannerVideo o las imagenes banner2..banner5.
+- Actualizar la lista heroSlides (src, link, alt, isVideo).
+- Si agrega o quita banners, actualizar los arrays de preload en los useEffect.
+- Para banners con link, usar link en heroSlides. Para PDF usar sorteoPdf.

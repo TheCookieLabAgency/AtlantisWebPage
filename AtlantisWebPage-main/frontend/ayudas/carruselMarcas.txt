@@ -1,0 +1,11 @@
+Carrusel de marcas general
+
+Ubicacion:
+- Componente: src/BrandCarousel.js
+- Estilos base: src/css/brandCarousel.css
+- Logos: src/img/HOME/CARRUSEL MARCAS/*.png
+
+Como ajustar:
+- Agregar imports de logos y sumarlos al array brandLogos.
+- Props disponibles: speed (slow/fast) y direction (left/right).
+- La animacion se clona en useEffect (Kevin Powell).

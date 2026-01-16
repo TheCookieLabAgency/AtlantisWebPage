@@ -1,0 +1,8 @@
+Rutas
+
+- Archivo: src/App.js
+- Aqui se registran las rutas de paginas (Route).
+
+Para agregar una pagina:
+1) Importar el componente.
+2) Agregar la ruta con el path y el elemento.
