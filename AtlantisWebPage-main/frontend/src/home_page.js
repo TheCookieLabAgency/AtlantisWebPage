@@ -13,8 +13,6 @@ import bannerVideo from './Material/BANNER-VIDEO.mp4';
 import banner2 from './Material/banner_inicio/septiembre/BANNER SEPTIEMBRE_1.png';
 import banner3 from './Material/banner_inicio/septiembre/BANNER SEPTIEMBRE_3.png';
 import banner4 from './Material/banner_inicio/septiembre/BANNER SEPTIEMBRE_4.png';
-import banner5 from './Material/banner_inicio/octubre/BANNER_SORTEO.png';
-import sorteoPdf from './Material/banner_inicio/octubre/TYC_SORTEO.pdf';
 import saleImg from "./Material/SALE.png";
 import marcasFavoritas from "./Material/MARCAS.png";
 import comoLlegar from "./Material/MAPA.png";
@@ -23,7 +21,7 @@ import Tacos from "./Material/GastronomiaHome/GASTRONOMIA-3-CAPA_TACOS.png";
 import Aguitas from "./Material/GastronomiaHome/GASTRONOMIA-1-CAPA_BEBIDAS.png";
 import Pastica from "./Material/GastronomiaHome/GASTRONOMIA-2-CAPA_PASTA.png";
 
-import { FaInstagram, FaFacebookF, FaTiktok, FaPhoneAlt, FaMapMarkerAlt, FaCalendarAlt, FaEnvelope } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaTiktok, FaPhoneAlt, FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
 import { Footer } from "./components/Footer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -68,10 +66,6 @@ const importCinemaMovies = () => {
 
 const peliculas = importCinemaMovies();
 
-/* Contacto */
-const email = 'habeasdata@atlantisplaza.com';
-const subject ='Consulta Atlantis';
-
 function HomePage(){
   const [isMobile, setIsMobile] = useState(false);
   // 0 = banner video, 1.. = banners
@@ -95,7 +89,7 @@ function HomePage(){
   // Preload de banners solo en móvil para mejorar la carga percibida
   useEffect(() => {
     if (!isMobile) return;
-    const sources = [banner2, banner3, banner4, banner5];
+    const sources = [banner2, banner3, banner4];
     const preloaders = sources.map((src) => {
       const img = new Image();
       img.src = src;
@@ -111,7 +105,7 @@ function HomePage(){
 
   // Preload global de banners (PC y móvil)
   useEffect(() => {
-    const imgSources = [banner2, banner3, banner4, banner5];
+    const imgSources = [banner2, banner3, banner4];
     const imgPreload = imgSources.map((src) => {
       const i = new Image();
       i.src = src;
@@ -126,7 +120,7 @@ function HomePage(){
   // Preload del banner principal en desktop para evitar parpadeo
   useEffect(() => {
     if (isMobile) return;
-    const imgs = [banner2, banner3, banner4, banner5].map((src) => {
+    const imgs = [banner2, banner3, banner4].map((src) => {
       const i = new Image();
       i.src = src;
       return i;
@@ -232,12 +226,7 @@ function HomePage(){
     };
   }, [isMobile, peliculas.length]);
 
-  /* Gmail + WhatsApp */
-  const redirectToGmail = () => {
-    const encodedSubject = encodeURIComponent(subject);
-    const url = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${email}&su=${encodedSubject}`;
-    window.open(url, '_blank');
-  };
+  /* WhatsApp */
   const redirectToWhatsapp = () => {
     const phoneNumber = "573187503969";
     const message = "Hola, quiero más información sobre Atlantis";
@@ -289,7 +278,6 @@ function HomePage(){
     { src: banner2, link: commercialVideoLink, alt: 'Banner Septiembre 1' },
     { src: banner3, link: 'https://destinoatlantis.soytopmember.com/', alt: 'Banner 2' },
     { src: banner4, link: 'https://www.instagram.com/atlantis.oficial/p/DOO6dp3k_44/', alt: 'Banner 3' },
-    { src: banner5, link: sorteoPdf, alt: 'Banner sorteo' },
   ];
   const TOTAL_HERO_SLIDES = heroSlides.length;
 
@@ -577,12 +565,6 @@ function HomePage(){
                   <div className="columna">
                     <h4> NUESTRO HORARIO</h4>
                     <p><FaCalendarAlt style={{ marginRight: '8px', color:'yellow' }} />Lunes a domingo<br />5:00 a.m. a 12:00 a.m.</p>
-                  </div>
-                  <div className="columna">
-                    <h4>ESCRÍBENOS</h4>
-                    <p onClick={redirectToGmail} style={{ cursor: 'pointer' }}>
-                      <FaEnvelope style={{ marginRight: '8px', color:'yellow' }} />habeasdata@atlantisplaza.com
-                    </p>
                   </div>
                 </div>
                 <hr />
