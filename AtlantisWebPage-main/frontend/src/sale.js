@@ -24,7 +24,6 @@ import logo6 from "./img/HOME/CARRUSEL MARCAS/LogoMarca-cromantic.png";
 import logo7 from "./img/HOME/CARRUSEL MARCAS/LogoMarca-dollarcity.png";
 import logo8 from "./img/HOME/CARRUSEL MARCAS/LogoMarca-Actionblack.png";
 import logo9 from "./img/HOME/CARRUSEL MARCAS/LogoMarca-farmatodo.png";
-import logo10 from "./img/HOME/CARRUSEL MARCAS/LogoMarca-gruposeratta.png";
 import logo11 from "./img/HOME/CARRUSEL MARCAS/LogoMarca-juanvaldez.png";
 import logo12 from "./img/HOME/CARRUSEL MARCAS/LogoMarca-jumbo.png";
 import logo13 from "./img/HOME/CARRUSEL MARCAS/LogoMarca-labiferia.png";
@@ -35,7 +34,6 @@ import logo17 from "./img/HOME/CARRUSEL MARCAS/LogoMarca-parmesano.png";
 
 import electrolineraIcon from "./img/SALE/icon_electrolinera.svg";
 import premioEstacionamientoIcon from "./img/SALE/icon_premioestacionamiento.svg";
-import grupoSerattaIcon from "./img/SALE/icon_gruposeratta.svg";
 import soyTopIcon from "./img/SALE/icon_soytop.svg";
 
 // Promos actuales (OfertasSeptiembre)
@@ -336,7 +334,7 @@ function Sale() {
 
   const brandLogos = [
     logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9,
-    logo10, logo11, logo12, logo13, logo14, logo15, logo16, logo17,
+    logo11, logo12, logo13, logo14, logo15, logo16, logo17,
   ];
 
   return (
@@ -457,14 +455,6 @@ function Sale() {
             </div>
             <h3>PREMIO ESTACIONAMIENTO</h3>
             <p>Premiados por ofrecer el mejor espacio para micromovilidad.</p>
-          </div>
-
-          <div className="service-item">
-            <div className="service-icon">
-              <img src={grupoSerattaIcon} alt="Grupo Seratta" />
-            </div>
-            <h3>GRUPO SERATTA</h3>
-            <p>Vive la alta gastronomía con Grupo Seratta.</p>
           </div>
 
           <div className="service-item">

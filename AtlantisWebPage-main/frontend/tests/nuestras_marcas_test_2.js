@@ -28,7 +28,6 @@ import elCorralLogo from "./Material/logos/EL CORRAL__.png";
 import farmatodoLogo from "./Material/logos/FARMATODO__.png";
 import fxaLogo from "./Material/logos/FXA__.png";
 import goyurtLogo from "./Material/logos/Goyurt__.png";
-import grupoSerattaLogo from "./Material/logos/GRUPO SERATTA__.png";
 import jirehLogo from "./Material/logos/JIREH__.png";
 import jonSonenLogo from "./Material/logos/JON SONEN__.png";
 import juanValdezLogo from "./Material/logos/JUAN VALDEZ__.png";
@@ -57,7 +56,6 @@ import dejamu from "./img/MARCAS/01 BUEN COMER/dejamu.jpg";
 import dlili from "./img/MARCAS/01 BUEN COMER/dlili.jpg";
 import elCorral from "./img/MARCAS/01 BUEN COMER/el corral.jpg";
 import goyurt from "./img/MARCAS/01 BUEN COMER/goyurt.jpg";
-import grupoSeratta from "./img/MARCAS/01 BUEN COMER/grupo seratta.jpg";
 import juanValdez from "./img/MARCAS/01 BUEN COMER/Juan valdez.jpg";
 import kfc from "./img/MARCAS/01 BUEN COMER/kfc.jpg";
 import laBiferia from "./img/MARCAS/01 BUEN COMER/LA BIFERIA.jpg";
@@ -122,7 +120,6 @@ const marcasData = {
     { id: 4, name: "Dlili", image: dlili, category: "BUEN COMER" },
     { id: 5, name: "El Corral", image: elCorral, category: "BUEN COMER" },
     { id: 6, name: "Goyurt", image: goyurt, category: "BUEN COMER" },
-    { id: 7, name: "Grupo Seratta", image: grupoSeratta, category: "BUEN COMER" },
     { id: 8, name: "Juan Valdez", image: juanValdez, category: "BUEN COMER" },
     { id: 9, name: "KFC", image: kfc, category: "BUEN COMER" },
     { id: 10, name: "La Biferia", image: laBiferia, category: "BUEN COMER" },
@@ -196,7 +193,6 @@ const brandLogos = {
   "Farmatodo": farmatodoLogo,
   "FXA": fxaLogo,
   "Goyurt": goyurtLogo,
-  "Grupo Seratta": grupoSerattaLogo,
   "Jireh": jirehLogo,
   "Jon Sonen": jonSonenLogo,
   "Juan Valdez": juanValdezLogo,

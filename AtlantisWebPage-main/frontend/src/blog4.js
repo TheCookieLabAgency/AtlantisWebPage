@@ -36,7 +36,7 @@ function Blog4(){
                     </div>
                     <img src={FoodiesImg} className="blog-img"/>
                     <div className="blog-textPrincipal">
-                        <p className="blog-text">En el nivel 4, <strong>Seratta</strong> te invita a descubrir experiencias gastronómicas únicas, con más de 20 propuestas que despiertan los sentidos.
+                        <p className="blog-text">En el nivel 4 encontrarás experiencias gastronómicas únicas, con más de 20 propuestas que despiertan los sentidos.
                             <br></br><br></br><strong>El café perfecto para cada momento</strong>. Disfruta el inconfundible aroma de <strong>Juan Valdez</strong>, ideal para una pausa especial, o déjate sorprender por la excelencia de <strong>Café Mesa de los Santos</strong>, uno de los mejores del mundo.
                             <br></br><br></br><strong>El dulce final que lo cambia todo</strong>. En <strong>Todo Fresa</strong>, cada torta y cada granizado son el cierre perfecto para un día inolvidable.
                             <br></br>En Atlantis, cada visita es un viaje de sabor y emociones. ¡Ven y vive la experiencia!</p>
