@@ -14,7 +14,10 @@ import FoodiesImg from "./Material/PLAN FOODIE.png";
 import bannerPlan from "./Material/banners_pags_web/vive_tu_plan.png";
 import decathlonImg from "./Material/proximoPlan/blogAtlantis.jpg";
 import capadociaImg from "./Material/proximoPlan/blogCapadocia.jpg";
-
+// NUEVAS IMÁGENES VLOG ATLANTIS
+import blogAtlantis1 from "./Material/proximoPlan/BLogAtlantis1.JPG";
+import blogAtlantis2 from "./Material/proximoPlan/BLogAtlantis2.JPG";
+import blogAtlantis3 from "./Material/proximoPlan/BLogAtlantis3.JPG";
 function TuProximoPlan(){
     return(
         <div className="plan-page tu-plan-page">
@@ -140,6 +143,32 @@ function TuProximoPlan(){
                                 <span className="event-kicker">Souvenirs y beneficios locales</span>
                             </div>
                         </Link>
+                    </div>
+                </div>
+                    {/* NUEVO VLOG ATLANTIS */}
+                    <div className="event-card">
+                        <a href="/atlantis26.pdf" className="event-link" target="_blank" rel="noreferrer">
+
+                            <div className="event-date">
+                                <span className="day">2025</span>
+                            </div>
+
+                            <img src={blogAtlantis1} alt="Atlantis 26 años" />
+
+                            <div className="event-overlay">
+                                <span className="event-category">
+                                    VLOG ATLANTIS
+                                </span>
+
+                                <p className="event-title">
+                                    Atlantis: 26 años siendo puerta del comercio en Bogotá
+                                </p>
+
+                                <span className="event-kicker">
+                                    Historia, renovación y evolución del centro comercial
+                                </span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </section>
