@@ -497,7 +497,7 @@ function Navigation() {
                 onClick={(e) => handlePageNavigation(e, "/TuProximoPlan")}
                 className={isActive("/TuProximoPlan") ? "active" : undefined}
               >
-                TU PRÓXIMO PLAN
+                VLOG DE ATLANTIS
               </a>
             </li>
 
