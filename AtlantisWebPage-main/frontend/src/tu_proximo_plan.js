@@ -17,6 +17,8 @@ import capadociaImg from "./Material/proximoPlan/blogCapadocia.jpg";
 
 // NUEVAS IMÁGENES VLOG ATLANTIS
 import blogAtlantis1 from "./Material/proximoPlan/BLogAtlantis1.JPG";
+import bannerSorteo from "./Material/banner_inicio/Mayo/BANNER MAYO_4 copia.png";
+import { Blog8 } from "./blog8";
 
 function TuProximoPlan(){
     return(
@@ -28,6 +30,11 @@ function TuProximoPlan(){
 
             {/* Hero */}
             <header className="main-header-fon-tuPlan">
+                
+            </header>
+
+            {/* Encuentra tu plan */}
+            <section className="find-section">
                 <div className="banner-title">
                     <p className="hero-kicker">Vlog Atlantis</p>
                     <h1>Planes que prenden la chispa</h1>
@@ -36,15 +43,10 @@ function TuProximoPlan(){
                     </p>
 
                     <div className="hero-actions">
-                        <Link to="/Blog7" className="hero-btn primary">Ver sorteo Capadocia</Link>
+                        <Link to="/Blog8" className="hero-btn primary">Ver ATLANTIS 26 AÑOS</Link>
                         <Link to="/Blog6" className="hero-btn ghost">Ver &uacute;ltimas aperturas</Link>
                     </div>
                 </div>
-            </header>
-
-            {/* Encuentra tu plan */}
-            <section className="find-section">
-
                 <div className="find-headline">
                     <p className="find-eyebrow">Experiencias curadas</p>
                     <h2>Encuentra tu siguiente aventura en Atlantis</h2>
@@ -52,8 +54,55 @@ function TuProximoPlan(){
                         Desde viajes de cuento hasta sabores y deporte, comparte las novedades con tus clientes y activa la participaci&oacute;n.
                     </p>
                 </div>
-
+               
                 <div className="events-grid">
+
+                    
+                    {/* GANA CON ATLANTIS */}
+                    <div className="event-card">
+                        <Link to="/Blog9" className="event-link">
+
+                            <div className="event-date">
+                                <span className="day">2026</span>
+                            </div>
+
+                            <img src={bannerSorteo} alt="Gana con Atlantis" />
+
+                            <div className="event-overlay">
+                                <span className="event-category">SORTEO</span>
+                                <p className="event-title">
+                                    Gana con Atlantis: más de $27 millones en premios
+                                </p>
+                                <span className="event-kicker">
+                                    Participa registrando tus compras y gana increíbles premios
+                                </span>
+                            </div>
+
+                        </Link>
+                    </div>
+
+                    {/* VLOG ATLANTIS */}
+                    <div className="event-card">
+                         <Link to="/Blog8" className="event-link">
+
+                            <div className="event-date">
+                                <span className="day">2026</span>
+                            </div>
+
+                            <img src={blogAtlantis1} alt="Atlantis 26 años" />
+
+                            <div className="event-overlay">
+                                <span className="event-category">VLOG ATLANTIS</span>
+                                <p className="event-title">
+                                    Atlantis: 26 años siendo puerta del comercio en Bogotá
+                                </p>
+                                <span className="event-kicker">
+                                    Historia, renovación y evolución del centro comercial
+                                </span>
+                            </div>
+
+                        </Link>
+                    </div>
 
                     {/* CAPADOCIA */}
                     <div className="event-card">
@@ -188,28 +237,7 @@ function TuProximoPlan(){
                         </Link>
                     </div>
 
-                    {/* VLOG ATLANTIS */}
-                    <div className="event-card">
-                         <Link to="/Blog8" className="event-link">
-
-                            <div className="event-date">
-                                <span className="day">2025</span>
-                            </div>
-
-                            <img src={blogAtlantis1} alt="Atlantis 26 años" />
-
-                            <div className="event-overlay">
-                                <span className="event-category">VLOG ATLANTIS</span>
-                                <p className="event-title">
-                                    Atlantis: 26 años siendo puerta del comercio en Bogotá
-                                </p>
-                                <span className="event-kicker">
-                                    Historia, renovación y evolución del centro comercial
-                                </span>
-                            </div>
-
-                        </Link>
-                    </div>
+                   
 
                 </div>
             </section>
