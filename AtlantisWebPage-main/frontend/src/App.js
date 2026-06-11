@@ -15,6 +15,7 @@ import { Blog4 } from "./blog4.js";
 import { Blog5 } from "./blog5.js";
 import { Blog6 } from "./blog6.js";
 import { Blog7 } from "./blog7.js"
+import { Blog8 } from "./blog8.js"
 import { VlogAtlantis } from "./VlogAtlantis";
 import { SmartParking } from "./smart_parking";
 import { Biciparking } from "./bici_parking";
@@ -50,8 +51,7 @@ function App(){
         <Route path="/Blog6" element={<Blog6/>}/>
         <Route path="/Blog7" element={<Blog7/>}/>
         <Route path="/Blog8" element={<VlogAtlantis />} />    
-        
-
+        <Route path="/Blog9" element={<Blog8/>} />    
       </Routes>
       <CookieConsentBanner />
       <AvisoPrivacidad />
