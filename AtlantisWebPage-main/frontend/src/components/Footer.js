@@ -6,7 +6,7 @@ import logo from "../img/HOME/FOOTER/logo.png";
 
 import actionBlack from "../Material/PLAN HOGAR.png";
 import cinemark from "../Material/PLAN HOBBIES.png";
-import procedimientoReclamacionParqueaderos from "../Material/PROCEDIMIENTO_DE_RECLAMACION_EN_PARQUEADEROS.pdf";
+import procedimientoReclamacionParqueaderos from "../Material/Reglamento reclamaciones Atlantis VF.pdf";
 
 import avisoPrivacidadAtlantis from "../Material/Aviso de Privacidad - Atlantis.pdf";
 import politicaTratamientoDatosPersonales from "../Material/PL-01-Politica-tratamiento-de-datos-personales.pdf";
@@ -189,8 +189,13 @@ const Footer = () => {
                 Hogar
               </a>
             </li>
+           
             <li>
-              <a href="#" onClick={(e) => e.preventDefault()}>
+              <a
+                href="https://www.soytopmember.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Soy Top Member
               </a>
             </li>
@@ -219,7 +224,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://multiplika.co/pqrs/"
+                href="https://multiplika.my.site.com/pqrs/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
