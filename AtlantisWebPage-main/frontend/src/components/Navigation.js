@@ -567,7 +567,7 @@ function Navigation() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://multiplika.co/pqrs/">PQRs</a>
+                  <a href="https://multiplika.my.site.com/pqrs/">PQRs</a>
                 </li>
               </ul>
             </li>
@@ -1126,7 +1126,7 @@ function Navigation() {
                     </a>
                   </li>
                   <li>
-                    <a href="https://multiplika.co/pqrs/">PQRs</a>
+                    <a href="https://multiplika.my.site.com/pqrs/">PQRs</a>
                   </li>
                 </ul>
               </li>
